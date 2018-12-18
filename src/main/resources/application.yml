@@ -1,0 +1,24 @@
+---
+server:
+  port: 8081
+spring:
+  security:
+    user:
+      name: fred
+      password: peanut
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Healthcare-IT/configserver-sample
+          #username: uname
+          #password: pass
+          search-paths:
+            - 'station*'
+          repos:
+            perf:
+              pattern:
+                - "*/perf"
+              uri: https://github.com/Healthcare-IT/configserver-sample-perf
+              search-paths:
+                - 'station*'
